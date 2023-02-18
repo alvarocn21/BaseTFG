@@ -113,6 +113,11 @@ const CrearUsuarios: FC<{
                         contrasena: contrasena,
                         correo: correo
                     },
+                    context: {
+                        headers: {
+                            authorization: localStorage.getItem("token")
+                        }
+                    }
                 }).then(() => {
                     setNombre("");
                     setApellido1("");
